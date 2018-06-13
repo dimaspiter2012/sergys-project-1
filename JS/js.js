@@ -1,4 +1,3 @@
-
 (function() {
 
 	let field = document.querySelector("#review");
@@ -6,46 +5,46 @@
 	let button = document.querySelector("#feedback");
 	let text = document.querySelector(".text");
 
-
+	let inputV = [localStorage.getItem("inputValue")];
+	let names = [localStorage.getItem("nameValue")];
+	let timeV = [localStorage.getItem("timeValue")];
 	if (localStorage.getItem("div") !== null) {
-		let nameValue = localStorage.getItem("nameValue");
+		
+		let namesAr = names[0].split(',');
+		let inputAr = inputV[0].split(',');	
+		let timeAr = timeV[0].split(',');	
+
+		for (let i = 1; i < namesAr.length; i++) {
+		let data = [localStorage.getItem('time')];
+
 		let inputValue = localStorage.getItem("inputValue");
 		let div = document.createElement("div");
 		div.classList.add("block");
 
-		let block = document.querySelector(".block");
 		let p = document.createElement("p");
 		let p1 = document.createElement("p");
 		let time = document.createElement("div");
 		p.classList.add("paragraph");
 		p1.classList.add("name");
 		time.classList.add("time");
-
-		//Время
-		let month = localStorage.getItem("month");
-		let day = localStorage.getItem("day");
-		let hours = localStorage.getItem("hours");
-		let mins = localStorage.getItem("mins");
-		let year = localStorage.getItem("year");
-
 		text.appendChild(div).innerHTML;
-		div.appendChild(p1).innerHTML = "<b>Имя: </b>" + nameValue;
-		div.appendChild(p).innerHTML = "<b>Отзыв: </b>" + inputValue;
-		div.appendChild(time).innerHTML = hours + ":" + mins + " " + day + "." + month + "." + year;
+		div.appendChild(p1).innerHTML = "<b>Имя: </b>" + namesAr[i];
+		div.appendChild(p).innerHTML = "<b>Отзыв: </b>" + inputAr[i];
+		div.appendChild(time).innerHTML = timeAr[i];
+			
+		}
+		
 	};
-
-
 
 	button.addEventListener("click", function() {
 		let nameValue = name.value;
 		let inputValue = field.value;
-
+		
 
 		if (nameValue != "" && inputValue != "") {
 			let div = document.createElement("div");
 			div.classList.add("block");
 
-			let block = document.querySelector(".block");
 			let p = document.createElement("p");
 			let p1 = document.createElement("p");
 			let time = document.createElement("div");
@@ -72,16 +71,15 @@
 			name.value = "";
 			name.placeholder = "Введите имя";
 
-
-
+			let timeValue = hours + ":" + mins + " " + day + "." + month + "." + year;
+			
+			names.push(nameValue);
+			inputV.push(inputValue);
+			timeV.push(timeValue);	
 			localStorage.setItem("div", ".block");
-			localStorage.setItem("nameValue", nameValue);
-			localStorage.setItem("inputValue", inputValue);
-			localStorage.setItem("month", month);
-			localStorage.setItem("day", day);
-			localStorage.setItem("hours", hours);
-			localStorage.setItem("mins", mins);
-			localStorage.setItem("year", year);
+			localStorage.setItem("nameValue", names);
+			localStorage.setItem("inputValue", inputV);
+			localStorage.setItem("timeValue", timeV);
 		};
 	});
 })();
