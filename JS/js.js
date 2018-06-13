@@ -15,9 +15,7 @@
 		let timeAr = timeV[0].split(',');	
 
 		for (let i = 1; i < namesAr.length; i++) {
-		let data = [localStorage.getItem('time')];
 
-		let inputValue = localStorage.getItem("inputValue");
 		let div = document.createElement("div");
 		div.classList.add("block");
 
