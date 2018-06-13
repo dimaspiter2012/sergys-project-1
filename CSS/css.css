@@ -1,29 +1,16 @@
-
-header a {
-	color: #fff; 
-	text-decoration: none; 
-	user-select: none;
-	background: rgb(212,75,56);
-	padding: .7em 1.5em; 
-	outline: none; 
-	border-radius: 10px;
-
-} 
-header a:hover { background: rgb(232,95,76); } 
-
-header a:active { background: rgb(152,15,0); } 
-
-hr{
-	height: 1px;
-	background-color: black;
-	border: 1px solid black;
-	border-radius: 3px;
+body{
+	padding: 0px;
+	background-color: #f0ceac;
 }
+header h1{
+	font-family: sans-serif;
+	text-align: center;
+}
+
 header{
+	padding: 0px;
 	padding: 15px;
-	margin-bottom: 25px;
-	margin-left: 25px;
-	margin-top: 10px;
+	margin: 0px 0px;
 }
 body{
 	background-image: url(bg2.jpg);
@@ -38,23 +25,21 @@ textarea {
 	font-size: 20px;
 }
 #name{
-	position: absolute;
-	margin: 5px 15px;
+	background-color: inherit;
+	vertical-align: top;
 	padding: 2px;
 	height: 30px;
-	left: 665px;
+	
 }
 .name{
-	margin-top: 0px;
+	margin: 0 auto;
 	padding: 2px;
 	height: 14px;
 }
 .fields button {
-	width: auto;
+	display: inline;
+	vertical-align: top;
 	cursor: pointer;
-	position: absolute;
-	top: 145px;
-	left: 680px;
 	border-radius: 10px;
 	color: #fff; 
 	user-select: none;
@@ -70,9 +55,8 @@ textarea {
 	font-family: monospace;
 }
 .fields {
-
-	margin-left: 15px;
-	display: inline-block;
+	margin-left: 25%;
+	width: auto;
 	vertical-align: top;
 }
 .block{
@@ -82,7 +66,12 @@ textarea {
 	border-radius: 5px;
 	background-color: #CCFFFF;
 }
-
+#review{
+	margin: 0 auto;
+	height: 85vh;
+	margin-bottom: 5%;
+	background-color: inherit;
+}
 
 .time{
 	margin-top: 0px;
