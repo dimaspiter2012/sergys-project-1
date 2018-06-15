@@ -1,9 +1,16 @@
+::-webkit-input-placeholder { color: #0000005d; }
+::-moz-placeholder          { color: #0000005d; } 
+:-moz-placeholder           { color: #0000005d; } 
+:-ms-input-placeholder      { color: #0000005d; }
 body{
+	width: all;
 	padding: 0px;
 	background-color: #f0ceac;
 }
 header h1{
-	font-family: sans-serif;
+	margin: 0 auto;
+	font-size: 50px;
+	font-family: monospace 'Lucida Console';
 	text-align: center;
 }
 
@@ -12,24 +19,21 @@ header{
 	padding: 15px;
 	margin: 0px 0px;
 }
-body{
-	background-image: url(bg2.jpg);
-	background-size: 100%;
-}
 textarea {
+	border: none;
+	overflow: hidden;
 	display: inline-block;
 	resize: none;
 	caret-color: blue;
 	padding: 10px;
 	border-radius: 4px;
-	font-size: 20px;
+	font-size: 38px;
 }
 #name{
 	background-color: inherit;
 	vertical-align: top;
 	padding: 2px;
-	height: 30px;
-	
+	height: 40px;
 }
 .name{
 	margin: 0 auto;
@@ -55,19 +59,20 @@ textarea {
 	font-family: monospace;
 }
 .fields {
-	margin-left: 25%;
-	width: auto;
+	margin: 0 auto;
+	width: 950px;
 	vertical-align: top;
 }
 .block{
+
 	padding: 5px;
-	margin: 5px 15px;
-	width: 50%;
+	margin: 10px 15px;
+	width: all;
 	border-radius: 5px;
 	background-color: #CCFFFF;
 }
 #review{
-	margin: 0 auto;
+	width: 99%;
 	height: 85vh;
 	margin-bottom: 5%;
 	background-color: inherit;
@@ -79,4 +84,9 @@ textarea {
 	font-family: sans-serif;
 	font-size: 12px;
 	text-align: right;
+}
+
+.text {
+	width: 850px;
+	margin: 0 auto;
 }
