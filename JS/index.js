@@ -18,6 +18,7 @@ Ev2.onkeypress = function(event){
 
 (function() {
 	let field = document.querySelector("#review");
+	
 	let name = document.querySelector("#name")
 	let button = document.querySelector("#feedback");
 	let text = document.querySelector(".text");
@@ -35,21 +36,27 @@ Ev2.onkeypress = function(event){
 			let p = document.createElement("p");
 			let p1 = document.createElement("p");
 			let time = document.createElement("div");
+
+			let inputA = inputAr[i].split('_3_9').join(',');
+			let namesA = namesAr[i].split('_3_9').join(',');
 			p.classList.add("paragraph");
 			p1.classList.add("name");
 			time.classList.add("time");
 			text.insertBefore(div, oldDiv).innerHTML;
-			div.appendChild(p1).innerHTML = "<b>Имя: </b>" + namesAr[i];
-			div.appendChild(p).innerHTML = "<b>Отзыв: </b>" + inputAr[i];
+			div.appendChild(p1).innerHTML = "<b>Имя: </b>" + namesA;
+			div.appendChild(p).innerHTML = "<b>Отзыв: </b>" + inputA;
 			div.appendChild(time).innerHTML = timeAr[i];
 		};
 	};
-
+	let link = document.querySelector(".link");
+	
 	button.addEventListener("click", function() {
+		
 		let nameValue = name.value;
 		let inputValue = field.value;
 		
 		if (nameValue != "" && inputValue != "") {
+			link.setAttribute('name', 'link');
 			let div = document.createElement("div");
 			div.classList.add("block");
 			let oldDiv = text.querySelector(".block");
@@ -76,14 +83,29 @@ Ev2.onkeypress = function(event){
 			name.value = "";
 			name.placeholder = "Введите имя";
 			let timeValue = hours + ":" + mins + " " + day + "." + month + "." + year;
-			
-			names.push(nameValue);
-			inputV.push(inputValue);
+			let nameV_ = nameValue.split(',').join('_3_9');
+			names.push(nameV_);
+			let inputV_ = inputValue.split(',').join('_3_9');
+			inputV.push(inputV_);
 			timeV.push(timeValue);	
 			localStorage.setItem("div", ".block");
 			localStorage.setItem("nameValue", names);
 			localStorage.setItem("inputValue", inputV);
 			localStorage.setItem("timeValue", timeV);
+			setTimeout(function(){let link = document.querySelector(".link"); link.removeAttribute('name', 'link')}, 100);
 		};
 	});
 })();
+
+
+//Остаток места в LocalStorage
+let localStorageSpace = function(){
+	var allStrings = '';
+	for(var key in window.localStorage){
+		if(window.localStorage.hasOwnProperty(key)){
+			allStrings += window.localStorage[key];
+		}
+	}
+	return allStrings ? 3 + ((allStrings.length*16)/(8*1024)) + ' KB' : 'Empty (0 KB)';
+};
+console.log(localStorageSpace());
