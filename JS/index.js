@@ -1,4 +1,4 @@
-let Ev = document.getElementById("review");
+let Ev = document.getElementById("review"); //реализую переход с поля для ввода отзыва на поле для ввода имени при нажатии клавиши enter
 Ev.onkeypress = function(event){
 	if (event.keyCode == 13) {
 		let name = document.getElementById("name");
@@ -6,7 +6,7 @@ Ev.onkeypress = function(event){
 		return false;
 	};
 };
-let Ev2 = document.getElementById("name");
+let Ev2 = document.getElementById("name"); // реализую сохранение отзыва при нажатии клавиши enter 
 Ev2.onkeypress = function(event){
 	if (event.keyCode == 13) {
 		let button = document.getElementById("feedback");
@@ -17,26 +17,24 @@ Ev2.onkeypress = function(event){
 
 
 (function() {
-	let field = document.querySelector("#review");
-	
-	let name = document.querySelector("#name")
-	let button = document.querySelector("#feedback");
-	let text = document.querySelector(".text");
-	let inputV = [localStorage.getItem("inputValue")];
-	let names = [localStorage.getItem("nameValue")];
-	let timeV = [localStorage.getItem("timeValue")];
-	if (localStorage.getItem("div") !== null) {
+	let field = document.querySelector("#review"); 
+	let name = document.querySelector("#name"); 
+	let button = document.querySelector("#feedback"); 
+	let text = document.querySelector(".text");  
+	let inputV = [localStorage.getItem("inputValue")]; // объявляю массив с текстами отзывов
+	let names = [localStorage.getItem("nameValue")]; // объявляю массив с именами пользователей отзывов
+	let timeV = [localStorage.getItem("timeValue")]; // объявляю массив с верменем и датами отзывов
+	if (localStorage.getItem("div") !== null) { //выгрузка данных из LocalStorage
 		let namesAr = names[0].split(',');
 		let inputAr = inputV[0].split(',');	
 		let timeAr = timeV[0].split(',');	
-		for (let i = 1; i < namesAr.length; i++) {
-			let div = document.createElement("div");
-			div.classList.add("block");
-			let oldDiv = text.querySelector(".block");
-			let p = document.createElement("p");
-			let p1 = document.createElement("p");
-			let time = document.createElement("div");
-
+		for (let i = 1; i < namesAr.length; i++) { // вывод всех отзывов  
+			let div = document.createElement("div"); // объявляю переменную для создания div 
+			div.classList.add("block"); // присваиваю класс
+			let oldDiv = text.querySelector(".block"); //объявляю переменную для сортировки отзывов
+			let p = document.createElement("p"); // объявляю переменную для создания p с текстом отзыва
+			let p1 = document.createElement("p"); // объявляю переменную для создания p с именем пользователя
+			let time = document.createElement("div"); // объявляю переменную для создания div с времене
 			let inputA = inputAr[i].split('_3_9').join(',');
 			let namesA = namesAr[i].split('_3_9').join(',');
 			p.classList.add("paragraph");
@@ -50,7 +48,7 @@ Ev2.onkeypress = function(event){
 	};
 	let link = document.querySelector(".link");
 	
-	button.addEventListener("click", function() {
+	button.addEventListener("click", function() { //действие, которое будет исполняться при нажатии кнопки "Оставить отзыв"
 		
 		let nameValue = name.value;
 		let inputValue = field.value;
