@@ -1,16 +1,16 @@
-::-webkit-input-placeholder { color: #0000007e; }
-::-moz-placeholder          { color: #0000005d; } 
-:-moz-placeholder           { color: #0000005d; } 
-:-ms-input-placeholder      { color: #0000005d; }
-body{
+::-webkit-input-placeholder { color: #0000007e; } /* Стили placeholder */
+::-moz-placeholder          { color: #0000005d; } /* Стили placeholder */
+:-moz-placeholder           { color: #0000005d; } /* Стили placeholder */
+:-ms-input-placeholder      { color: #0000005d; } /* Стили placeholder */
+body{	/* Стили body */
 	width: all;
-	padding: 0px;
-	background-color: #f0ceac;
+	padding: 0px; 
+	background-color: #f0ceac; 
 }
-a{
+a{	/* Стили всех ссылок */
 	text-decoration: none;
 }
-header h1{
+header h1{ /* Стили заголовка страницы */
 	background-color: rgba(51, 153, 255, 0.1);
 	width: 1000px;
 	border-radius: 30px;
@@ -19,12 +19,11 @@ header h1{
 	font-family: monospace 'Lucida Console';
 	text-align: center;
 }
-
-header{
+header{ /* Стили шапки */
 	padding: 5px;
 	margin: 0px 0px;
 }
-textarea {
+textarea { /* Стили полей для ввода */
 	border: none;
 	overflow: hidden;
 	display: inline-block;
@@ -35,23 +34,23 @@ textarea {
 	background-color: #ffcc9970;
 	font-size: 42px;
 }
-.nInput{
+.nInput{ /* Стили для блока с полем ввода имени и кнопкой сохранения отзыва */
 	display: inline-block;
 	width: auto;
 	vertical-align: top;
 }
-#name{
+#name{ /* Стили для поля с именем */
 	vertical-align: top;
 	padding: 2px;
 	margin-bottom: 8%;
 	height: 60px;
 }
-.name{
+.name{ /* Стили для имени в сохраненном отзыве */
 	margin: 0 auto;
 	padding: 2px;
 	height: 14px;
 }
-.fields button {
+.nInput button { /* Стили для кнопки */
 	width: 260px;
 	height: 60px;
 	vertical-align: top;
@@ -63,42 +62,39 @@ textarea {
 	outline: none; 
 	font-size: 32px;
 } 
-#feedback:hover { background: rgb(232,95,76); }
-#feedback:active { background: rgb(152,15,0); } 
-.paragraph {
+.nInput button:hover { background: rgb(232,95,76); } /* Стили для кнопки при наведении */
+.nInput button:active { background: rgb(152,15,0); } /* Стили для кнопки при нажатии */
+.paragraph { /* Стили для текста сохраненного отзыва */
 	margin: 3px 3px;
 	font-size: 20px;
 	font-family: monospace;
 }
-.fields {
+.fields { /* Стили для основной части страницы */
 	margin: 0 auto;
 	width: 950px;
 	vertical-align: top;
 }
-.block{
-
+.block{ /* Стили для сохраненного отзыва */
 	padding: 5px;
 	margin: 10px 5px;
 	width: all;
 	border-radius: 5px;
 	background-color: #CCFFFF;
 }
-#review{
+#review{ /* Стили для поля ввода отзыва */
 	width: 99%;
 	height: 75vh;
 	margin-bottom: 1vh;
 
 }
-
-.time{
+.time{ /* Стили для времени в сохраненном отзыве */
 	margin-top: 0px;
 	width: auto;
 	font-family: sans-serif;
 	font-size: 12px;
 	text-align: right;
 }
-
-.text {
+.text { /* Стили для блока с сохраненными отзывами */
 	width: 950px;
 	margin: 0 auto;
 }
